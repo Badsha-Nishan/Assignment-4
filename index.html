@@ -71,19 +71,25 @@
         <!-- All Tab -->
         <div class="mb-4 space-x-3">
           <button
-            class="bg-base-100 rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4] text-[#64748B]"
+            onclick="tabStyle('allBtn')"
+            id="allBtn"
+            class="bg-primary rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4] text-white transition"
           >
             All
           </button>
           <!-- Interview Tab -->
           <button
-            class="bg-base-100 rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4] text-[#64748B]"
+            onclick="tabStyle('interviewBtn')"
+            id="interviewBtn"
+            class="bg-base-100 rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4]"
           >
             Interview
           </button>
           <!-- Rejected Tab -->
           <button
-            class="bg-base-100 rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4] text-[#64748B]"
+            onclick="tabStyle('rejectedBtn')"
+            id="rejectedBtn"
+            class="bg-base-100 rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4]"
           >
             Rejected
           </button>
@@ -92,15 +98,12 @@
 
       <!-- Card Section -->
       <section>
-        <div
-          id="card-container"
-          class="card bg-base-100 w-full min-h-72 shadow-sm mb-4"
-        >
+        <div id="card-container" class="space-y-6 mb-5">
           <!-- Card 1 -->
-          <div class="card-body">
+          <div class="card-body bg-base-100 card w-full min-h-72 shadow-sm">
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
-                Mobile First Corp
+                TechWave Solutions
               </h2>
               <button class="btn btn-circle">
                 <svg
@@ -115,9 +118,11 @@
                 </svg>
               </button>
             </div>
-            <p class="text-[#64748B] text-xl mb-5">React Native Developer</p>
+            <p class="text-[#64748B] text-xl mb-5">
+              Frontend Developer (React)
+            </p>
             <p class="text-[#64748B] mb-5">
-              Remote • Full-time • $130,000 - $175,000
+              Remote • Full-time • $95,000 - $120,000
             </p>
             <p
               class="text-[#002C5C] font-medium px-3 py-3 bg-[#EEF4FF] rounded max-w-max mb-2"
@@ -125,8 +130,8 @@
               NOT APPLIED
             </p>
             <p class="mb-5 text-[#323B49]">
-              Build cross-platform mobile applications using React Native. Work
-              on products used by millions of users worldwide.
+              Develop responsive web interfaces using React. Collaborate with
+              designers to build fast, user-friendly applications.
             </p>
             <!-- Actionable Card Button -->
             <div class="card-actions">
@@ -134,10 +139,12 @@
               <button class="btn btn-outline btn-error">REJECTED</button>
             </div>
           </div>
-          <div class="card-body">
+
+          <!-- Card 2 -->
+          <div class="card-body bg-base-100 card w-full min-h-72 shadow-sm">
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
-                Mobile First Corp
+                CloudBridge Systems
               </h2>
               <button class="btn btn-circle">
                 <svg
@@ -152,9 +159,11 @@
                 </svg>
               </button>
             </div>
-            <p class="text-[#64748B] text-xl mb-5">React Native Developer</p>
+            <p class="text-[#64748B] text-xl mb-5">
+              Backend Developer (Node.js)
+            </p>
             <p class="text-[#64748B] mb-5">
-              Remote • Full-time • $130,000 - $175,000
+              Hybrid • Full-time • $105,000 - $140,000
             </p>
             <p
               class="text-[#002C5C] font-medium px-3 py-3 bg-[#EEF4FF] rounded max-w-max mb-2"
@@ -162,8 +171,8 @@
               NOT APPLIED
             </p>
             <p class="mb-5 text-[#323B49]">
-              Build cross-platform mobile applications using React Native. Work
-              on products used by millions of users worldwide.
+              Build scalable APIs and microservices using Node.js. Optimize
+              performance and maintain cloud-based infrastructure.
             </p>
             <!-- Actionable Card Button -->
             <div class="card-actions">

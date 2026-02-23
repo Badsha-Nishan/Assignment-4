@@ -1,10 +1,14 @@
-const total = document.getElementById("total").innerText;
-const interview = document.getElementById("interview").innerText;
-const rejected = document.getElementById("rejected").innerText;
+let total = document.getElementById("total");
+let interview = document.getElementById("interview");
+let rejected = document.getElementById("rejected");
 
 const cardContainer = document.getElementById("card-container");
-console.log(cardContainer.childElementCount);
 
-function count() {
-  const card = cardContainer;
+function count(total) {
+  const card = cardContainer.childElementCount;
+  total.innerText = card;
+  return total;
 }
+
+count(total);
+count(interview);

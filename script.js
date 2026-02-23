@@ -32,5 +32,22 @@ function tabStyle(id) {
 
 mainContainer.addEventListener("click", function (event) {
   const parent = event.target.parentNode;
-  const cardTitle = parent.querySelector(".card-title").innerText;
+  const cardInfo = { parent };
+  //   console.log(cardInfo.parent.id)
+  //   interview.push(cardInfo);
+  const cardExist = interview.find((item) => item.parent.id === "card-1");
+  console.log(cardExist);
+  if (!cardExist) {
+    interview.push(cardInfo);
+  }
+
+  console.log(interview);
+  //   if (cardInfo.parent.id === "card-1") {
+  //     interview.push(cardInfo);
+  //   }
+
+  //   console.log(interview)
+  //   const card1 = parent.querySelector("#card-1");
+  //   console.log(parent)
+  //   const cardTitle = parent.querySelector(".card-title").innerText;
 });

@@ -22,6 +22,7 @@ function count() {
   appliedCount.innerText = appliedList.length;
   interviewCount.innerText = interviewList.length;
   rejectedCount.innerText = rejectedList.length;
+  document.getElementById("jobCount").innerText = cardContainer.children.length;
 }
 
 count();
@@ -196,7 +197,7 @@ function renderApplied() {
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
       ${apply.cardTitle}
     </h2>
-    <button class="btn btn-circle">
+    <button class="btn btn-circle delete-btn btn-error">
       <svg
         class="size-[1.2em]"
         xmlns="http://www.w3.org/2000/svg"
@@ -252,7 +253,7 @@ function renderInterview() {
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
       ${apply.cardTitle}
     </h2>
-    <button class="btn btn-circle">
+    <button class="btn btn-circle delete-btn btn-error">
       <svg
         class="size-[1.2em]"
         xmlns="http://www.w3.org/2000/svg"
@@ -308,7 +309,7 @@ function renderRejected() {
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
       ${apply.cardTitle}
     </h2>
-    <button class="btn btn-circle">
+    <button class="btn btn-circle delete-btn btn-error">
       <svg
         class="size-[1.2em]"
         xmlns="http://www.w3.org/2000/svg"
@@ -351,6 +352,3 @@ function renderRejected() {
     filterSection.appendChild(div);
   }
 }
-
-document.getElementById("jobCount").innerText =
-  cardContainer.querySelectorAll(".job-card").length;

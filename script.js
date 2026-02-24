@@ -37,7 +37,9 @@ function tabStyle(id) {
   rejectedBtn.classList.remove("bg-primary", "text-white");
 
   const selected = document.getElementById(id);
-  selected.classList.add("bg-primary", "text-white");
+  if (selected) {
+    selected.classList.add("bg-primary", "text-white");
+  }
 
   currentStatus = id;
 
@@ -231,7 +233,7 @@ function renderApplied() {
   for (let apply of appliedList) {
     let div = document.createElement("div");
     div.className =
-      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6";
+      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6 hover:shadow-lg transition duration-300 hover:translate-y-1";
     div.innerHTML = `
     <div class="flex justify-between">
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -294,7 +296,7 @@ function renderInterview() {
   for (let apply of interviewList) {
     let div = document.createElement("div");
     div.className =
-      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6";
+      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6 hover:shadow-lg transition duration-300 hover:translate-y-1";
     div.innerHTML = `
     <div class="flex justify-between">
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -357,7 +359,7 @@ function renderRejected() {
   for (let apply of rejectedList) {
     let div = document.createElement("div");
     div.className =
-      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6";
+      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6 hover:shadow-lg transition duration-300 hover:translate-y-1";
     div.innerHTML = `
     <div class="flex justify-between">
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">

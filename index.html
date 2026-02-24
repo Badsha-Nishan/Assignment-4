@@ -28,6 +28,11 @@
       .delete-btn svg {
         pointer-events: none;
       }
+      .tab-btn:hover {
+        border: 1px solid blue;
+        transform: translateY(-2px);
+        transition: all 0.2s ease-out;
+      }
     </style>
   </head>
   <body class="bg-[#F8FAFC]">
@@ -83,7 +88,7 @@
           <button
             onclick="tabStyle('allBtn')"
             id="allBtn"
-            class="bg-primary rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4] text-white transition"
+            class="bg-primary tab-btn rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4] text-white transition"
           >
             All
           </button>
@@ -92,7 +97,7 @@
           <button
             onclick="tabStyle('appliedBtn')"
             id="appliedBtn"
-            class="bg-base-100 rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4]"
+            class="bg-base-100 tab-btn rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4]"
           >
             Applied
           </button>
@@ -101,7 +106,7 @@
           <button
             onclick="tabStyle('interviewBtn')"
             id="interviewBtn"
-            class="bg-base-100 rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4]"
+            class="bg-base-100 tab-btn rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4]"
           >
             Interview
           </button>
@@ -110,7 +115,7 @@
           <button
             onclick="tabStyle('rejectedBtn')"
             id="rejectedBtn"
-            class="bg-base-100 rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4]"
+            class="bg-base-100 tab-btn rounded-lg px-8 py-3 border cursor-pointer border-[#F1F2F4]"
           >
             Rejected
           </button>
@@ -134,7 +139,7 @@
           <!-- Card 1 -->
           <div
             id="card-1"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -185,7 +190,7 @@
           <!-- Card 2 -->
           <div
             id="card-2"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -236,7 +241,7 @@
           <!-- Card 3 -->
           <div
             id="card-3"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -287,7 +292,7 @@
           <!-- Card 4 -->
           <div
             id="card-4"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -338,7 +343,7 @@
           <!-- Card 5 -->
           <div
             id="card-5"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -389,7 +394,7 @@
           <!-- Card 6 -->
           <div
             id="card-6"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -440,7 +445,7 @@
           <!-- Card 7 -->
           <div
             id="card-7"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -491,7 +496,7 @@
           <!-- Card 8 -->
           <div
             id="card-8"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -542,7 +547,7 @@
           <!-- Card 9 -->
           <div
             id="card-9"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -593,7 +598,7 @@
           <!-- Card 10 -->
           <div
             id="card-10"
-            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm"
+            class="job-card card-body bg-base-100 card w-full min-h-72 shadow-sm hover:shadow-lg transition duration-300 hover:translate-y-1"
           >
             <div class="flex justify-between">
               <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">

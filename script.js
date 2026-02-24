@@ -18,6 +18,7 @@ const cardContainer = document.getElementById("card-container");
 const filterSection = document.getElementById("filtered-section");
 const background = document.querySelector(".background");
 
+// Update Count
 function count() {
   total.innerText = cardContainer.children.length;
   appliedCount.innerText = appliedList.length;
@@ -28,6 +29,7 @@ function count() {
 
 count();
 
+// Highlight selected tab and render card
 function tabStyle(id) {
   allBtn.classList.remove("bg-primary", "text-white");
   appliedBtn.classList.remove("bg-primary", "text-white");
@@ -62,6 +64,7 @@ function tabStyle(id) {
   }
 }
 
+// Handle button click and delete card
 mainContainer.addEventListener("click", function (event) {
   if (event.target.classList.contains("applied-btn")) {
     const card = event.target.closest(".job-card");
@@ -173,6 +176,7 @@ mainContainer.addEventListener("click", function (event) {
     tabStyle(currentStatus);
   }
 
+  // Delete card with confirmation
   if (event.target.classList.contains("delete-btn")) {
     const card = event.target.closest(".job-card");
     const cardTitle = card.querySelector(".card-title").innerText;
@@ -213,6 +217,7 @@ mainContainer.addEventListener("click", function (event) {
   tabStyle(currentStatus);
 });
 
+// Card rendering section
 function renderApplied() {
   filterSection.innerHTML = "";
 

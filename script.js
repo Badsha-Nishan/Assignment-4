@@ -16,6 +16,7 @@ const rejectedBtn = document.getElementById("rejectedBtn");
 const mainContainer = document.querySelector("main");
 const cardContainer = document.getElementById("card-container");
 const filterSection = document.getElementById("filtered-section");
+const background = document.querySelector(".background");
 
 function count() {
   total.innerText = cardContainer.children.length;
@@ -45,6 +46,7 @@ function tabStyle(id) {
   } else if (id === "allBtn") {
     cardContainer.classList.remove("hidden");
     filterSection.classList.add("hidden");
+    background.classList.add("hidden");
   } else if (id === "interviewBtn") {
     cardContainer.classList.add("hidden");
     filterSection.classList.remove("hidden");
@@ -188,6 +190,13 @@ mainContainer.addEventListener("click", function (event) {
 function renderApplied() {
   filterSection.innerHTML = "";
 
+  if (appliedList.length === 0) {
+    background.classList.remove("hidden");
+    return;
+  } else {
+    background.classList.add("hidden");
+  }
+
   for (let apply of appliedList) {
     let div = document.createElement("div");
     div.className =
@@ -244,6 +253,13 @@ function renderApplied() {
 function renderInterview() {
   filterSection.innerHTML = "";
 
+  if (interviewList.length === 0) {
+    background.classList.remove("hidden");
+    return;
+  } else {
+    background.classList.add("hidden");
+  }
+
   for (let apply of interviewList) {
     let div = document.createElement("div");
     div.className =
@@ -299,6 +315,13 @@ function renderInterview() {
 
 function renderRejected() {
   filterSection.innerHTML = "";
+
+  if (rejectedList.length === 0) {
+    background.classList.remove("hidden");
+    return;
+  } else {
+    background.classList.add("hidden");
+  }
 
   for (let apply of rejectedList) {
     let div = document.createElement("div");

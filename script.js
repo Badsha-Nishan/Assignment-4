@@ -46,7 +46,11 @@ function tabStyle(id) {
   } else if (id === "allBtn") {
     cardContainer.classList.remove("hidden");
     filterSection.classList.add("hidden");
-    background.classList.add("hidden");
+    if (cardContainer.children.length === 0) {
+      background.classList.remove("hidden");
+    } else {
+      background.classList.add("hidden");
+    }
   } else if (id === "interviewBtn") {
     cardContainer.classList.add("hidden");
     filterSection.classList.remove("hidden");
@@ -93,9 +97,8 @@ mainContainer.addEventListener("click", function (event) {
       (item) => item.cardTitle !== cardInfo.cardTitle
     );
 
-    tabStyle(currentStatus);
-
     count();
+    tabStyle(currentStatus);
   } else if (event.target.classList.contains("interview-btn")) {
     const card = event.target.closest(".job-card");
 
@@ -130,9 +133,8 @@ mainContainer.addEventListener("click", function (event) {
       (item) => item.cardTitle !== cardInfo.cardTitle
     );
 
-    tabStyle(currentStatus);
-
     count();
+    tabStyle(currentStatus);
   } else if (event.target.classList.contains("rejected-btn")) {
     const card = event.target.closest(".job-card");
 
@@ -167,24 +169,48 @@ mainContainer.addEventListener("click", function (event) {
       (item) => item.cardTitle !== cardInfo.cardTitle
     );
 
-    tabStyle(currentStatus);
-
     count();
+    tabStyle(currentStatus);
   }
 
   if (event.target.classList.contains("delete-btn")) {
     const card = event.target.closest(".job-card");
     const cardTitle = card.querySelector(".card-title").innerText;
-    card.remove();
 
-    appliedList = appliedList.filter((item) => item.cardTitle !== cardTitle);
-    interviewList = interviewList.filter(
-      (item) => item.cardTitle !== cardTitle
+    openModal(
+      "Confirmation!!",
+      "Are you sure to delete this card",
+      function () {
+        card.remove();
+
+        if (
+          cardContainer.children.length === 0 &&
+          appliedList.length === 0 &&
+          interviewList.length === 0 &&
+          rejectedList.length === 0
+        ) {
+          background.classList.remove("hidden");
+        }
+
+        appliedList = appliedList.filter(
+          (item) => item.cardTitle !== cardTitle
+        );
+        interviewList = interviewList.filter(
+          (item) => item.cardTitle !== cardTitle
+        );
+        rejectedList = rejectedList.filter(
+          (item) => item.cardTitle !== cardTitle
+        );
+
+        count();
+        tabStyle(currentStatus);
+      }
     );
-    rejectedList = rejectedList.filter((item) => item.cardTitle !== cardTitle);
+    return;
   }
 
   count();
+  tabStyle(currentStatus);
 });
 
 function renderApplied() {
@@ -200,7 +226,7 @@ function renderApplied() {
   for (let apply of appliedList) {
     let div = document.createElement("div");
     div.className =
-      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm";
+      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6";
     div.innerHTML = `
     <div class="flex justify-between">
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -263,7 +289,7 @@ function renderInterview() {
   for (let apply of interviewList) {
     let div = document.createElement("div");
     div.className =
-      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm";
+      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6";
     div.innerHTML = `
     <div class="flex justify-between">
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -326,7 +352,7 @@ function renderRejected() {
   for (let apply of rejectedList) {
     let div = document.createElement("div");
     div.className =
-      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm";
+      "job-card card-body bg-base-100 card w-full min-h-72 shadow-sm mb-6";
     div.innerHTML = `
     <div class="flex justify-between">
     <h2 class="card-title text-[#002C5C] font-semibold text-xl mb-1">
@@ -374,4 +400,31 @@ function renderRejected() {
     `;
     filterSection.appendChild(div);
   }
+}
+
+// For Modal
+
+const okBtn = document.querySelector(".ok-btn");
+const closeBtn = document.querySelector(".close-btn");
+
+okBtn.addEventListener("click", function () {
+  if (modalAction) {
+    modalAction();
+  }
+  modal.close();
+});
+
+closeBtn.addEventListener("click", function () {
+  modal.close();
+});
+
+let modalAction = null;
+const modal = document.getElementById("my_modal_2");
+const modalTitle = document.getElementById("title");
+const modalMessage = document.getElementById("msg");
+function openModal(title = "", message = "", action = null) {
+  modalTitle.textContent = title;
+  modalMessage.textContent = message;
+  modalAction = action;
+  modal.showModal();
 }

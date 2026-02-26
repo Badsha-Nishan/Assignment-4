@@ -18,6 +18,7 @@ const cardContainer = document.getElementById("card-container");
 const filterSection = document.getElementById("filtered-section");
 const background = document.querySelector(".background");
 const jobCount = document.getElementById("jobCount");
+// let status = card.querySelector(".status-text");
 
 // Update Count
 function count() {
@@ -74,15 +75,13 @@ function tabStyle(id) {
 mainContainer.addEventListener("click", function (event) {
   if (event.target.classList.contains("applied-btn")) {
     const card = event.target.closest(".job-card");
-
     const cardTitle = card.querySelector(".card-title").innerText;
     const designation = card.querySelector(".designation").innerText;
     const salary = card.querySelector(".salary").innerText;
-    let status = card.querySelector(".status-text");
     const description = card.querySelector(".description").innerText;
+    let status = card.querySelector(".status-text");
 
     status.innerText = "APPLIED";
-
     const cardInfo = {
       cardTitle,
       designation,
@@ -118,12 +117,11 @@ mainContainer.addEventListener("click", function (event) {
     const description = card.querySelector(".description").innerText;
 
     status.innerText = "INTERVIEW";
-
     const cardInfo = {
       cardTitle,
       designation,
       salary,
-      status: "INTERVIEW",
+      status: "INTERVIEWED",
       description,
     };
 
@@ -154,7 +152,6 @@ mainContainer.addEventListener("click", function (event) {
     const description = card.querySelector(".description").innerText;
 
     status.innerText = "REJECTED";
-
     const cardInfo = {
       cardTitle,
       designation,

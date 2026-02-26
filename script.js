@@ -17,6 +17,7 @@ const mainContainer = document.querySelector("main");
 const cardContainer = document.getElementById("card-container");
 const filterSection = document.getElementById("filtered-section");
 const background = document.querySelector(".background");
+const jobCount = document.getElementById("jobCount");
 
 // Update Count
 function count() {
@@ -24,20 +25,20 @@ function count() {
   appliedCount.innerText = appliedList.length;
   interviewCount.innerText = interviewList.length;
   rejectedCount.innerText = rejectedList.length;
-  document.getElementById("jobCount").innerText = cardContainer.children.length;
+  jobCount.innerText = cardContainer.children.length;
 }
 
 count();
 
 // Highlight selected tab and render card
 function tabStyle(id) {
-  allBtn.classList.remove("bg-primary", "text-white");
   appliedBtn.classList.remove("bg-primary", "text-white");
   interviewBtn.classList.remove("bg-primary", "text-white");
   rejectedBtn.classList.remove("bg-primary", "text-white");
 
   const selected = document.getElementById(id);
   if (selected) {
+    allBtn.classList.remove("bg-primary", "text-white");
     selected.classList.add("bg-primary", "text-white");
   }
 
@@ -46,6 +47,7 @@ function tabStyle(id) {
   if (id === "appliedBtn") {
     cardContainer.classList.add("hidden");
     filterSection.classList.remove("hidden");
+    jobCount.innerText = `${appliedList.length} of ${cardContainer.children.length}`;
     renderApplied();
   } else if (id === "allBtn") {
     cardContainer.classList.remove("hidden");
@@ -58,10 +60,12 @@ function tabStyle(id) {
   } else if (id === "interviewBtn") {
     cardContainer.classList.add("hidden");
     filterSection.classList.remove("hidden");
+    jobCount.innerText = `${interviewList.length} of ${cardContainer.children.length}`;
     renderInterview();
   } else if (id === "rejectedBtn") {
     cardContainer.classList.add("hidden");
     filterSection.classList.remove("hidden");
+    jobCount.innerText = `${rejectedList.length} of ${cardContainer.children.length}`;
     renderRejected();
   }
 }

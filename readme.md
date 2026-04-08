@@ -1,26 +1,58 @@
-1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+# 📋 Job Application Tracker
 
-Ans:    getElementByID is direct select one element with unique ID and return single element.
-        getElementByClassName is select by className and it is return an html collection.  
-        querySelector is select first one from multiple elements and its more flexible then others.
-        querySelectorAll is select all matching elements and return a nodeList.
+A web application that helps users track and manage their job applications efficiently.
+Users can add, update, and monitor job application status in an organized way.
 
-2. How do you create and insert a new element into the DOM?
+---
 
-Ans:    const div = document.createElement('div');
-        div.innerText = "FrontEnd Developer";
-        div.className = "card";
-        document.body.appendChild(div);
+## 🚀 Live Demo
 
-3. What is Event Bubbling? And how does it work?
+👉 [(Add your live link here)](https://badsha-nishan.github.io/Job-Application-Tracker/)
 
-Ans:    When a event clicked on a child element it move up to parent element. because parent element listen child event. this called event bubbling. like: Button > div > body > document
+---
 
-4. What is Event Delegation in JavaScript? Why is it useful?
+## 🛠️ Technologies Used
 
-Ans:    Event Delegation means don't adding event listener to many child elements, do on parent, its work perfect. its more useful for cleaner code, easy to maintain and add few event with better performance.
+* 🟨 JavaScript (ES6+)
+* 🎨 Tailwind CSS
+* 📦 Local Storage / JSON
 
-5. What is the difference between preventDefault() and stopPropagation() methods?
+---
 
-Ans:    preventDefault > it use for browser default behavior like form submission etc.
-        stopPropagation > it stop event bubbling to parent element.
+## ✨ Key Features
+
+* 📝 Add new job applications
+* 📌 Track application status (Applied, Interview, Rejected, etc.)
+* ✏️ Update and manage application details
+* 🗑️ Delete applications
+* 📱 Responsive design
+
+---
+
+## 🎯 Future Improvements
+
+* 📊 Analytics dashboard
+* 📅 Showing all badges
+
+---
+
+## 📸 Screenshots
+
+<img width="1256" height="790" alt="Screenshot 2026-03-05 220118" src="https://github.com/user-attachments/assets/2e24747a-bdd7-4944-8339-87404d68e892" />
+
+
+---
+
+## 🤝 Contributing
+
+Feel free to fork this repo and submit a pull request.
+
+---
+
+## 📧 Contact
+
+👉 [badshanisan14@gmail.com](mailto:badshanisan14@gmail.com)
+
+---
+
+⭐️ If you like this project, give it a star!

@@ -7,7 +7,7 @@ Users can add, update, and monitor job application status in an organized way.
 
 ## 🚀 Live Demo
 
-👉 [(https://badsha-nishan.github.io/Job-Application-Tracker/)]
+👉 https://badsha-nishan.github.io/Job-Application-Tracker/
 
 ---
 
